@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do list</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h4 class="title">Today's To Do</h4>
+      <button class="refrech-btn">
+        <i class="fa-solid fa-arrows-rotate"></i>
+      </button>
+
+      <form>
+        <input
+          class="input-list"
+          type="text"
+          placeholder="Add  to  your  List..."
+          autofocus
+        />
+        <button class="add-btn">
+          <i class="fa-solid fa-arrow-turn-down"></i>
+        </button>
+      </form>
+      <div class="lists"></div>
+      <div class="clear">
+        <a class="clear-btn">Clear all completed</a>
+      </div>
+    </div>
+  </body>
+</html>
