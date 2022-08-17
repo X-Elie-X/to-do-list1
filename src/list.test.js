@@ -29,10 +29,16 @@ describe('Add and remove functions', () => {
   test('AddTask', () => {
     task.addTask(newTask);
     task.addTask(newTask2);
-    // console.log(task.list);
     expect(task.list).toHaveLength(2);
     const storeData = JSON.parse(localStorage.getItem('taskList'));
     expect(storeData).toHaveLength(2);
     expect(storeData[0].description).toBe('test1');
+  });
+  test('removeTask', () => {
+    task.removeTask(newTask.id);
+    expect(task.list).toHaveLength(1);
+    const storeData = JSON.parse(localStorage.getItem('taskList'));
+    expect(storeData).toHaveLength(1);
+    expect(storeData[0].description).toBe('test2');
   });
 });
