@@ -29,7 +29,7 @@ describe('Add and remove functions', () => {
   test('AddTask', () => {
     task.addTask(newTask);
     task.addTask(newTask2);
-    console.log(task.list);
+    // console.log(task.list);
     expect(task.list).toHaveLength(2);
     const storeData = JSON.parse(localStorage.getItem('taskList'));
     expect(storeData).toHaveLength(2);
