@@ -1,20 +1,24 @@
-class localStorageMock {
+class LocalStorageMock {
   constructor() {
-    this.taskList = {};
+    this.TaskList = {};
   }
+
   clear() {
-    this.taskList = {};
+    this.TaskList = {};
   }
-  getIteam(key) {
-    return this.taskList[key] || null;
+
+  getItem(key) {
+    return this.TaskList[key] || null;
   }
+
   setItem(key, value) {
-    this.taskList[key] = String(value);
+    this.TaskList[key] = String(value);
   }
+
   removeItem(key) {
-    delete this.taskList[key];
+    delete this.TaskList[key];
   }
 }
-const newList = new localStorageMock();
+const newList = new LocalStorageMock();
 
 module.exports = newList;
