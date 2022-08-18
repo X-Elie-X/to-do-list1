@@ -42,3 +42,42 @@ describe('Add and remove functions', () => {
     expect(storeData[0].description).toBe('test2');
   });
 });
+
+describe('Test editTask, completeTask and clearCompletedTask functions', () => {
+  test('editTask', () => {
+    const newTask3 = {
+      id: '3',
+      description: 'test3',
+      completed: false,
+      index: 3,
+    };
+    task.addTask(newTask3);
+    task.editTask(newTask3.id, 'EDITED TASK');
+    expect(task.list).toHaveLength(2);
+    const storeData = JSON.parse(localStorage.getItem('taskList'));
+    expect(storeData).toHaveLength(2);
+    expect(storeData[1].description).toBe('EDITED TASK');
+  });
+  test('completeTask', () => {
+    const newTask4 = {
+      id: '4',
+      description: 'test4',
+      completed: false,
+      index: 4,
+    };
+    task.addTask(newTask4);
+    task.completeTask(newTask4.id, true);
+    expect(task.list).toHaveLength(3);
+    const storeData = JSON.parse(localStorage.getItem('taskList'));
+    expect(storeData).toHaveLength(3);
+    expect(storeData[2].completed).toBe(true);
+  });
+  test('clearCompletedTask', () => {
+    task.clearCompletedTask();
+    expect(task.list).toHaveLength(2);
+    const storeData = JSON.parse(localStorage.getItem('taskList'));
+    expect(storeData).toHaveLength(2);
+    expect(storeData[1].completed).toBe(false);
+    expect(storeData[0].description).toBe('test2');
+  });
+});
